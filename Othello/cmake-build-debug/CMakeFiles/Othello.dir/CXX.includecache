@@ -9,6 +9,8 @@
 /home/mss/CLionProjects/Othello/GamePlay.cpp
 GamePlay.h
 /home/mss/CLionProjects/Othello/GamePlay.h
+string
+-
 QtCore/qcoreapplication.h
 -
 QtWidgets/QApplication
@@ -17,11 +19,17 @@ QtWidgets/QApplication
 /home/mss/CLionProjects/Othello/GamePlay.h
 QWidget
 -
+QtWidgets
+-
 QtWidgets/qmainwindow.h
 -
 QtWidgets/qpushbutton.h
 -
+QtWidgets/qlabel.h
+-
 QtWidgets/qtextedit.h
+-
+cstring
 -
 
 /home/mss/CLionProjects/Othello/MainWindow.cpp
