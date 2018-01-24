@@ -1,0 +1,4 @@
+/home/mss/CLionProjects/Othello/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mss/CLionProjects/Othello/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mss/CLionProjects/Othello/cmake-build-debug/CMakeFiles/Othello.dir
+/home/mss/CLionProjects/Othello/cmake-build-debug/CMakeFiles/Othello_autogen.dir
