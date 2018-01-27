@@ -128,7 +128,185 @@ void GamePlay::checkValid() {
         for(int j=0;j<8;j++)
         {
             if(handler[i][j]==1)
-            {   x=i;y=j;
+            {
+                x=i;y=j;
+                bool st=false;
+                while(x<7)
+                {
+                    x++;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x>0)
+                {
+                    x--;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(y>0)
+                {
+                    y--;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(y<7)
+                {
+                    y++;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x>0&&y>0)
+                {
+                    x--;y--;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x<7&&y<7)
+                {
+                    x++;y++;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x>0&&y<7)
+                {
+                    x--;y++;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x<7&&y>0)
+                {
+                    x++;y--;
+                    if(handler[x][y]==0)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==1&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=1;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+
+
+                x=i;y=j;
                 while(handler[x][y]!=-1&&x<8&&y<8&&x>=0&&y>=0)
                 {
                     x++;
@@ -643,7 +821,186 @@ void GamePlay::checkValidCpu() {
         for(int j=0;j<8;j++)
         {
             if(handler[i][j]==0)
-            {   x=i;y=j;
+            {
+                x=i;y=j;
+                bool st=false;
+                while(x<7)
+                {
+                    x++;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x>0)
+                {
+                    x--;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(y>0)
+                {
+                    y--;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(y<7)
+                {
+                    y++;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x>0&&y>0)
+                {
+                    x--;y--;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x<7&&y<7)
+                {
+                    x++;y++;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x>0&&y<7)
+                {
+                    x--;y++;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+                st= false;
+                x=i;y=j;
+                while(x<7&&y>0)
+                {
+                    x++;y--;
+                    if(handler[x][y]==1)
+                    {
+                        st=true;
+                    }
+                    if(handler[x][y]==0&&st)
+                    {
+                        st=false;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&st)
+                    {
+                        temp[x][y]=0;
+                        break;
+                    }
+                    if(handler[x][y]==-1&&!st)
+                    { break;}
+                }
+
+
+
+                x=i;y=j;
                 while(handler[x][y]!=-1&&x<8)
                 {
                     x++;
