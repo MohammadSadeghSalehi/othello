@@ -11,6 +11,8 @@ GamePlay.h
 /home/mss/CLionProjects/Othello/GamePlay.h
 string
 -
+ctime
+-
 QtCore/qcoreapplication.h
 -
 QtWidgets/QApplication

@@ -22,6 +22,7 @@ public:
     GamePlay(int height,int width,QWidget *parent=0);
     ~GamePlay();
     void checkValid();
+    void checkValidCpu();
     void paint();
     void changeB(int,int);
     void changeW(int,int);
@@ -45,11 +46,14 @@ private:
     QPushButton *piece[8][8];
     int handler[8][8];
     int temp[8][8];
-    QChar cScore='0',pScore='0';
+    int cScore=0,pScore=0;
+    char cScored1='0',cScored2='0',pScored1='0',pScored2='0';
+    QChar cS1=cScored1,cS2=cScored2,pS1=pScored1,pS2=pScored2;
     QString str1= "cpu score: ",str2="player score: ";
     QLabel *cpuScore;
     QLabel *playerScore;
     int counter=0;
+    bool v1=false,v2=false,v3=false,v4=false,v5=false,v6=false,v7=false,v8= false;
 };
 
 #endif //OTHELLO_GAMEPLAY_H
