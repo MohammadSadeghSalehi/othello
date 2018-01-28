@@ -11,6 +11,7 @@
 #include <QtWidgets/qlabel.h>
 #include <QtWidgets/qtextedit.h>
 #include <cstring>
+#include <MainWindow.h>
 
 using namespace std;
 
@@ -40,6 +41,7 @@ void click40();void click41();void click42();void click43();void click44();void 
 void click50();void click51();void click52();void click53();void click54();void click55();void click56();void click57();
 void click60();void click61();void click62();void click63();void click64();void click65();void click66();void click67();
 void click70();void click71();void click72();void click73();void click74();void click75();void click76();void click77();
+void backToMenu();
 
 private:
     QLabel *plate[8][8];
@@ -52,6 +54,7 @@ private:
     QString str1= "cpu score: ",str2="player score: ";
     QLabel *cpuScore;
     QLabel *playerScore;
+    QPushButton *backMenu;
     int counter=0;
     bool v1=false,v2=false,v3=false,v4=false,v5=false,v6=false,v7=false,v8= false;
 };

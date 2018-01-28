@@ -24,6 +24,9 @@ GamePlay::GamePlay(int height, int width, QWidget *parent) {
     playerScore->setGeometry(330,10,120,40);
     playerScore->setStyleSheet("background-color: gray;border-radius:10px;");
     playerScore->setAlignment(Qt::AlignCenter);
+    backMenu = new QPushButton("Back to menu", this);
+    backMenu->setGeometry(190, 10, 120, 40);
+    backMenu->setStyleSheet("background-color: black;color: white;font: bold 15px;border-style:outset;border-radius:10px;");
 
     for(int i=0;i<8;i++)
     {
@@ -113,12 +116,18 @@ GamePlay::GamePlay(int height, int width, QWidget *parent) {
     connect(piece[6][7], SIGNAL(clicked()), this, SLOT(click67()));
     connect(piece[7][7], SIGNAL(clicked()), this, SLOT(click77()));
 
+    connect(backMenu, SIGNAL(clicked()), this, SLOT(backToMenu()));
     run();
 }
 
 
 GamePlay::~GamePlay() {
 
+}
+void GamePlay::backToMenu() {
+    this->hide();
+    MainWindow *mainWindow = new MainWindow();
+    mainWindow->show();
 }
 
 void GamePlay::checkValid() {
@@ -757,26 +766,158 @@ void GamePlay::reset(int x,int y) {
     v1=0;v2=0;v3=0;v4=0;v5=0;v6=0;v7=0;v8=0;
 }
 void GamePlay::cpu() {
+    bool possibleMove=false;
     if(cScore+pScore<64) {
         checkValidCpu();
 
+        if(temp[0][0]==0)
+        {
+            possibleMove= true;
+            handler[0][0]=0;
+            changeW(0,0);
+            reset(0,0);
+            counter++;
+            paint();
+            run();
+        }
+        else if(temp[0][7]==0)
+        {
+            possibleMove= true;
+            handler[0][7]=0;
+            changeW(0,7);
+            reset(0,7);
+            counter++;
+            paint();
+            run();
+        }
+        else if(temp[7][0]==0)
+        {
+            possibleMove= true;
+            handler[7][0]=0;
+            changeW(7,0);
+            reset(7,0);
+            counter++;
+            paint();
+            run();
+        }
+        else if(temp[7][7]==0)
+        {
+            possibleMove= true;
+            handler[7][7]=0;
+            changeW(7,7);
+            reset(7,7);
+            counter++;
+            paint();
+            run();
+        }
+        int k=0;
+            for(int j=2;j<6;j++)
+            {
+                if(temp[k][j]==0)
+                {
+                    possibleMove= true;
+                    handler[k][j]=0;
+                    changeW(k,j);
+                    reset(k,j);
+                    counter++;
+                    paint();
+                    run();
+                }
+            }
+        k=7;
+        for(int j=2;j<6;j++)
+        {
+            if(temp[k][j]==0)
+            {
+                possibleMove= true;
+                handler[k][j]=0;
+                changeW(k,j);
+                reset(k,j);
+                counter++;
+                paint();
+                run();
+            }
+        }
+        int l=0;
+        for(int i=2;i<6;i++)
+        {
+            if(temp[i][l]==0)
+            {
+                possibleMove= true;
+                handler[i][l]=0;
+                changeW(i,l);
+                reset(i,l);
+                counter++;
+                paint();
+                run();
+            }
+        }
+        l=7;
+        for(int i=2;i<6;i++)
+        {
+            if(temp[i][l]==0)
+            {
+                possibleMove= true;
+                handler[i][l]=0;
+                changeW(i,l);
+                reset(i,l);
+                counter++;
+                paint();
+                run();
+            }
+        }
+        int t=0;
+        for(int i=2;i<6;i++)
+        {
+            for(int j=2;j<6;j++)
+            {
+                if(temp[i][j]==0)
+                {
+                    t++;
+                }
+            }
+        }
+        srand((int)time(0));
+        float r = (((float)rand()) /RAND_MAX);
+        t =(int)((r*t)+1);
+        for(int i=2;i<6;i++)
+        {
+            for(int j=2;j<6;j++)
+            {
+                t--;
+                if(temp[i][j]==0&&t==0)
+                {
+                    possibleMove= true;
+                    handler[i][j]=0;
+                    changeW(i,j);
+                    reset(i,j);
+                    counter++;
+                    paint();
+                    run();
+                }
+            }
+        }
         for(int i=0;i<8;i++)
         {
             for(int j=0;j<8;j++)
             {
                 if(temp[i][j]==0)
                 {
-
+                    possibleMove= true;
                     handler[i][j]=0;
                     changeW(i,j);
                     reset(i,j);
-                    break;
+                    counter++;
+                    paint();
+                    run();
                 }
             }
         }
-        counter++;
-        paint();
-        run();
+        if(!possibleMove)
+        {
+            run();
+            counter++;
+        }
     }
     else
     {

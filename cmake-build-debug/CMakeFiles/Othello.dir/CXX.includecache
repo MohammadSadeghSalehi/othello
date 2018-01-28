@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+..//MainWindow.h
+QtWidgets
+-
+QtWidgets/qmainwindow.h
+-
+QtWidgets/qpushbutton.h
+-
+QtWidgets/qtextedit.h
+-
+GamePlay.h
+../GamePlay.h
+
 /home/mss/CLionProjects/Othello/GamePlay.cpp
 GamePlay.h
 /home/mss/CLionProjects/Othello/GamePlay.h
@@ -32,6 +44,8 @@ QtWidgets/qlabel.h
 QtWidgets/qtextedit.h
 -
 cstring
+-
+MainWindow.h
 -
 
 /home/mss/CLionProjects/Othello/MainWindow.cpp
